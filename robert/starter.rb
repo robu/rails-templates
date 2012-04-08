@@ -739,7 +739,7 @@ say_recipe 'Capybara'
 
 @configs[@current_recipe] = config
 
-gem 'capybara', :group => [:development, :test] unless config['cucumber']
+gem 'capybara', :group => [:development, :test] unless recipes.include?('cucumber') # unless config['cucumber']
 
 after_bundler do
   create_file "spec/support/capybara.rb", <<-RUBY
